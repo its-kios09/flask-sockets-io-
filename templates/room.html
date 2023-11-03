@@ -7,6 +7,7 @@
       rel="stylesheet"
       href="../static/css/stylev2.css"
     />
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" >
     <script
       src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.0.1/socket.io.js"
       integrity="sha512-q/dWJ3kcmjBLU4Qc47E4A9kTB4m3wuTY7vkFJDTZKjTs8jhyGQnaUrxa0Ytd0ssMZhbNua9hE+E7Qv1j+DyZwA=="
@@ -23,9 +24,8 @@
               <span style="color: green; font-size: 20px;">&#9679;</span>
             </span>
           </h3>
-        <p>Chat Invitation Code: <b>{{code}}</b></p>
-        <a href="/home">Leave Chat</a>
-        <br>
+          <p style="display: inline; font-family: 'Josefin Sans', sans-serif; text-decoration: none;">Chat Invitation Code: <b>{{code}}</b></p> <a href="/" style="color: red; font-family: 'Josefin Sans', sans-serif; float: right; text-decoration: none;">Leave Chat</a>
+          <br>
         <br>
         <hr>
         <div class="messages" id="messages"></div>
