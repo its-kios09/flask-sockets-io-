@@ -19,8 +19,12 @@ def generate_unique_code(length):
             break
     
     return code
+@app.route('/', methods=['GET'])
+def index():
+    
+    return render_template("index.html")
 
-@app.route("/", methods=["POST", "GET"])
+@app.route("/home", methods=["POST", "GET"])
 def home():
     session.clear()
     if request.method == "POST":
