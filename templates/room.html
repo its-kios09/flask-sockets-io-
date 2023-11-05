@@ -7,12 +7,15 @@
       rel="stylesheet"
       href="../static/css/stylev2.css"
     />
+    <link rel="shortcut icon" href="../static/hero.jpg" type="image/x-icon">
+
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" >
     <script
       src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.0.1/socket.io.js"
       integrity="sha512-q/dWJ3kcmjBLU4Qc47E4A9kTB4m3wuTY7vkFJDTZKjTs8jhyGQnaUrxa0Ytd0ssMZhbNua9hE+E7Qv1j+DyZwA=="
       crossorigin="anonymous"
     ></script>
+    
   </head>
   <body>
     <div class="content">
@@ -28,19 +31,28 @@
           <br>
         <br>
         <hr>
-        <div class="messages" id="messages"></div>
-        <div class="inputs">
-          <input
-            type="text"
-            rows="3"
-            placeholder="Message"
-            name="message"
-            id="message"
-          />
-          <button type="button" name="send" id="send-btn" onClick="sendMessage()">
-            Send
-          </button>
-        </div>
+
+        <section class="msger">
+          <header class="msger-header">
+            <div class="msger-header-title">
+              <i class="fas fa-love"></i> Chat Room <i class="fas fa-love"></i>
+            </div>
+          </header>
+
+          <main class="msger-chat">
+            <div class="messages" id="messages">
+              <div class="msg-text"></div>
+            </div>
+
+            <div class="inputs">
+              <input class="msger-input" type="text" rows="3" id="message" placeholder="New Message..." name="message">
+              <button class="msger-send-btn" type="button" name="send" id="send-btn"  onClick="sendMessage()">Send</button>
+            </div>
+
+          </main>
+ 
+        </section>
+
       </div>
       <script type="text/javascript">
         var socketio = io();
@@ -60,15 +72,18 @@
                 </strong>
                 &nbsp; &nbsp; &nbsp;
                 <span class="muted">
+                  
+                 <small>
+                  <sup style="color: #606060; font-size: 10px; margin-top: 5px;">
                     ${new Date().toLocaleString()}
+                  </sup>
+                </small>
                 </span>
               </span>
               <br>
               ${msg}
               <br>
               <br>
-
-
           </div>
           `;
           messages.innerHTML += content;
